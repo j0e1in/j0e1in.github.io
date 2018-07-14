@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jupyter Notebook Tips | Joe Lin</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.c36325bf.css" as="style"><link rel="preload" href="/assets/js/app.e04e06c7.js" as="script"><link rel="preload" href="/assets/js/5.9fd63af5.js" as="script"><link rel="prefetch" href="/assets/js/8.42ea1d9b.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.e47c214c.js"><link rel="prefetch" href="/assets/js/2.ca61bc24.js"><link rel="prefetch" href="/assets/js/3.7c27b296.js"><link rel="prefetch" href="/assets/js/4.61a94b53.js"><link rel="prefetch" href="/assets/js/6.57f14f08.js"><link rel="prefetch" href="/assets/js/7.0f4a11df.js"><link rel="prefetch" href="/assets/js/9.91201f3b.js"><link rel="prefetch" href="/assets/js/10.d18985b9.js"><link rel="prefetch" href="/assets/js/11.3950009d.js"><link rel="prefetch" href="/assets/js/12.44aeca04.js"><link rel="prefetch" href="/assets/js/13.6e946f62.js"><link rel="prefetch" href="/assets/js/14.a435ff09.js"><link rel="prefetch" href="/assets/js/15.da8d70ff.js"><link rel="prefetch" href="/assets/js/16.77bf496d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c36325bf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Joe Lin
+    </span></a><div class="links"><form id="search-form" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form><nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">DevNotes</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/dev_notes/chatbot/" class="nav-link">Chatbot</a></li><li class="dropdown-item"><!----><a href="/dev_notes/ml/" class="nav-link router-link-active">Machine Learning</a></li></ul></div></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">DevNotes</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/dev_notes/chatbot/" class="nav-link">Chatbot</a></li><li class="dropdown-item"><!----><a href="/dev_notes/ml/" class="nav-link router-link-active">Machine Learning</a></li></ul></div></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>Tensorflow</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Tools</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/dev_notes/ml/tools/jupyter-colab.html" class="sidebar-link">Jupyter Notebook on Google Colab</a></li><li><a href="/dev_notes/ml/tools/jupyter-tips.html" class="active sidebar-link">Jupyter Notebook Tips</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dev_notes/ml/tools/jupyter-tips.html#magics" class="sidebar-link">Magics</a></li><li class="sidebar-sub-header"><a href="/dev_notes/ml/tools/jupyter-tips.html#tools" class="sidebar-link">Tools</a></li></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h1>Jupyter Notebook Tips</h1><h2 id="magics"><a href="#magics" aria-hidden="true" class="header-anchor">#</a> Magics</h2><ul><li><p>Manage environment variables</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token operator">%</span>env NUM_THREADS<span class="token operator">=</span><span class="token number">4</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li><li><p>Get details</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token operator">%</span>timeit?
+<span class="token builtin">list</span>?
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li><li><p>Measure execution time</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># Measure entire block</span>
+<span class="token operator">%</span><span class="token operator">%</span>time
+<span class="token comment"># Measure a single line</span>
+<span class="token operator">%</span>timeit func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li><li><p>Execute other python/notebook</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># Excute code in demo.ipynb (can be .py)</span>
+<span class="token operator">%</span>run <span class="token punctuation">.</span><span class="token operator">/</span>demo<span class="token punctuation">.</span>ipynb
+<span class="token comment"># Load content in demo.py to the cell</span>
+<span class="token operator">%</span>load <span class="token punctuation">.</span><span class="token operator">/</span>demo<span class="token punctuation">.</span>py
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li><li><p>Store data between notebooks</p><div class="language-python line-numbers-mode"><pre class="language-python"><code>data <span class="token operator">=</span> <span class="token string">'this is the string I want to pass to different notebook'</span>
+<span class="token operator">%</span>store data
+<span class="token keyword">del</span> data
+
+<span class="token comment"># Read `data` in another notebook</span>
+<span class="token operator">%</span>store <span class="token operator">-</span>r data <span class="token comment"># variable name must be the same</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li><li><p>Write cell code to python file</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token operator">%</span><span class="token operator">%</span>writefile pythoncode<span class="token punctuation">.</span>py
+<span class="token keyword">import</span> numpy
+<span class="token keyword">def</span> <span class="token function">append_if_not_exists</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> x <span class="token operator">not</span> <span class="token keyword">in</span> arr<span class="token punctuation">:</span>
+        arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        
+<span class="token keyword">def</span> <span class="token function">some_useless_slow_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    arr <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> numpy<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span>
+        append_if_not_exists<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> x<span class="token punctuation">)</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></li><li><p>Display file content</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token operator">%</span>pycat pythoncode<span class="token punctuation">.</span>py
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li><li><p>Profiling</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># Profile run time</span>
+<span class="token operator">%</span>prun func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Profile run time by line</span>
+<span class="token comment"># !pip install line_profiler</span>
+<span class="token operator">%</span>load_ext line_profiler 
+<span class="token operator">%</span>lprun func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Profile memory</span>
+<span class="token comment"># !pip install memory_profiler</span>
+<span class="token operator">%</span>load_ext memory_profiler 
+<span class="token operator">%</span>mprun func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Measure the memory use of a single statement</span>
+<span class="token operator">%</span>memit func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></li><li><p>Debugging</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token operator">%</span>debug <span class="token comment"># launch ipdb debugger</span>
+<span class="token operator">%</span>pdb   <span class="token comment"># set breakpoint (== `import ipdb; ipdb.set_trace()`)</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li><li><p>Use other kernels for the cell</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token operator">%</span><span class="token operator">%</span>python2
+<span class="token operator">%</span><span class="token operator">%</span>python3
+<span class="token operator">%</span><span class="token operator">%</span>ruby
+<span class="token operator">%</span><span class="token operator">%</span>perl
+<span class="token operator">%</span><span class="token operator">%</span>bash
+<span class="token operator">%</span><span class="token operator">%</span>R
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li></ul><h2 id="tools"><a href="#tools" aria-hidden="true" class="header-anchor">#</a> Tools</h2><ul><li><p>Write fast code using Cython</p><div class="language-python line-numbers-mode"><pre class="language-python"><code>!pip install cython
+<span class="token operator">%</span>load_ext Cython
+
+<span class="token operator">%</span><span class="token operator">%</span>cython
+<span class="token keyword">def</span> <span class="token function">myltiply_by_2</span><span class="token punctuation">(</span><span class="token builtin">float</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">2.0</span> <span class="token operator">*</span> x
+
+myltiply_by_2<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token comment"># 46.0</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li><li><p>Install Jupyter Contrib Extensions</p><div class="language-python line-numbers-mode"><pre class="language-python"><code>pip install https<span class="token punctuation">:</span><span class="token operator">//</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>ipython<span class="token operator">-</span>contrib<span class="token operator">/</span>jupyter_contrib_nbextensions<span class="token operator">/</span>tarball<span class="token operator">/</span>master
+pip install jupyter_nbextensions_configurator
+jupyter contrib nbextension install <span class="token operator">-</span><span class="token operator">-</span>user
+jupyter nbextensions_configurator enable <span class="token operator">-</span><span class="token operator">-</span>user
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li><li><p>RISE: jupyter notebook presentation</p><div class="language-python line-numbers-mode"><pre class="language-python"><code>conda install <span class="token operator">-</span>c damianavila82 rise  <span class="token comment"># recommended</span>
+pip install RISE  <span class="token comment"># less recommended</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li><li><p>Display media</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> IPython<span class="token punctuation">.</span>display <span class="token keyword">import</span> display<span class="token punctuation">,</span> Image
+display<span class="token punctuation">(</span>Image<span class="token punctuation">(</span><span class="token string">'demo.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li><li><p>Connect Github to <a href="https://mybinder.org/" target="_blank" rel="noopener noreferrer">Binder<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> to display notebooks to others</p></li></ul></div><div class="page-edit"><!----><!----></div><div class="page-nav"><p class="inner"><span class="prev">
+        ← <a href="/dev_notes/ml/tools/jupyter-colab.html" class="prev">
+          Jupyter Notebook on Google Colab
+        </a></span><!----></p></div></div></div></div>
+    <script src="/assets/js/5.9fd63af5.js" defer></script><script src="/assets/js/app.e04e06c7.js" defer></script>
+  </body>
+</html>

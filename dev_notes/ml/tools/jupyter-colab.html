@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jupyter Notebook on Google Colab | Joe Lin</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.c36325bf.css" as="style"><link rel="preload" href="/assets/js/app.e04e06c7.js" as="script"><link rel="preload" href="/assets/js/6.57f14f08.js" as="script"><link rel="prefetch" href="/assets/js/8.42ea1d9b.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.e47c214c.js"><link rel="prefetch" href="/assets/js/2.ca61bc24.js"><link rel="prefetch" href="/assets/js/3.7c27b296.js"><link rel="prefetch" href="/assets/js/4.61a94b53.js"><link rel="prefetch" href="/assets/js/5.9fd63af5.js"><link rel="prefetch" href="/assets/js/7.0f4a11df.js"><link rel="prefetch" href="/assets/js/9.91201f3b.js"><link rel="prefetch" href="/assets/js/10.d18985b9.js"><link rel="prefetch" href="/assets/js/11.3950009d.js"><link rel="prefetch" href="/assets/js/12.44aeca04.js"><link rel="prefetch" href="/assets/js/13.6e946f62.js"><link rel="prefetch" href="/assets/js/14.a435ff09.js"><link rel="prefetch" href="/assets/js/15.da8d70ff.js"><link rel="prefetch" href="/assets/js/16.77bf496d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c36325bf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Joe Lin
+    </span></a><div class="links"><form id="search-form" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form><nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">DevNotes</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/dev_notes/chatbot/" class="nav-link">Chatbot</a></li><li class="dropdown-item"><!----><a href="/dev_notes/ml/" class="nav-link router-link-active">Machine Learning</a></li></ul></div></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">DevNotes</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/dev_notes/chatbot/" class="nav-link">Chatbot</a></li><li class="dropdown-item"><!----><a href="/dev_notes/ml/" class="nav-link router-link-active">Machine Learning</a></li></ul></div></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>Tensorflow</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Tools</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/dev_notes/ml/tools/jupyter-colab.html" class="active sidebar-link">Jupyter Notebook on Google Colab</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dev_notes/ml/tools/jupyter-colab.html#enable-gpu-on-colab" class="sidebar-link">Enable GPU on Colab</a></li><li class="sidebar-sub-header"><a href="/dev_notes/ml/tools/jupyter-colab.html#use-google-drive-as-data-storage" class="sidebar-link">Use Google Drive as Data Storage</a></li><li class="sidebar-sub-header"><a href="/dev_notes/ml/tools/jupyter-colab.html#upload-download-files" class="sidebar-link">Upload / Download Files</a></li></ul></li><li><a href="/dev_notes/ml/tools/jupyter-tips.html" class="sidebar-link">Jupyter Notebook Tips</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1>Jupyter Notebook on Google Colab</h1><p><a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Google Colab<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> is an excellent resource for running jupyter notebooks. It provides 4 CPUs, 16GB memory and an optional Nvidia Tesla K80 GPU for its users of up to 12-hour run time for free. Since there are plenty of tutorials on how to run your notebooks on Colab, I will only document some useful tips on working with Colab that makes it even more appealing.</p><h2 id="enable-gpu-on-colab"><a href="#enable-gpu-on-colab" aria-hidden="true" class="header-anchor">#</a> Enable GPU on Colab</h2><p>When training machine learning models, of course you want to have GPU(s). GPU can be enabled in <code>Edit &gt; Notebook Settings</code>. Next, you want to make sure GPU is enabled.</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># List all CPU and GPUs</span>
+<span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>python<span class="token punctuation">.</span>client <span class="token keyword">import</span> device_lib
+device_lib<span class="token punctuation">.</span>list_local_devices<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span>Output<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">&quot;/device:CPU:0&quot;</span>
+ device_type<span class="token punctuation">:</span> <span class="token string">&quot;CPU&quot;</span>
+ memory_limit<span class="token punctuation">:</span> <span class="token number">268435456</span>
+ locality <span class="token punctuation">{</span>
+ <span class="token punctuation">}</span>
+ incarnation<span class="token punctuation">:</span> <span class="token number">17407044275154012122</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">&quot;/device:GPU:0&quot;</span>
+ device_type<span class="token punctuation">:</span> <span class="token string">&quot;GPU&quot;</span>
+ memory_limit<span class="token punctuation">:</span> <span class="token number">11287966516</span>
+ locality <span class="token punctuation">{</span>
+   bus_id<span class="token punctuation">:</span> <span class="token number">1</span>
+   links <span class="token punctuation">{</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ incarnation<span class="token punctuation">:</span> <span class="token number">13515505613363191723</span>
+ physical_device_desc<span class="token punctuation">:</span> <span class="token string">&quot;device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7&quot;</span><span class="token punctuation">]</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>You can see that a Tesla K80 (12GB memory) is available. You can also use this to  verify tensorflow is using the GPU.</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+tf<span class="token punctuation">.</span>test<span class="token punctuation">.</span>gpu_device_name<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span>Output<span class="token punctuation">]</span>
+<span class="token string">'/device:GPU:0'</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="use-google-drive-as-data-storage"><a href="#use-google-drive-as-data-storage" aria-hidden="true" class="header-anchor">#</a> Use Google Drive as Data Storage</h2><p>Every time you open a notebook, Google starts a new docker container, so everything will be lost once the notebook tab is closed. As a result, you want to retain your training results. The good news is you can mount your Google drive as an external disk onto Colab container! Even better, you can upload dataset to Google Drive and use it directly from Colab after mounting it.</p><p>To mount Google Drive, just execute following script in Colab notebook:</p><p>(This section will ask for access permission to Google Drive.)</p><div class="language-sh line-numbers-mode"><pre class="language-text"><code># Setup authentication to mount Google Drive
+!apt-get install -y -qq software-properties-common python-software-properties module-init-tools
+!add-apt-repository -y ppa:alessandro-strada/ppa 2&gt;&amp;1 &gt; /dev/null
+!apt-get update -qq 2&gt;&amp;1 &gt; /dev/null
+!apt-get -y install -qq google-drive-ocamlfuse fuse
+from google.colab import auth
+auth.authenticate_user()
+from oauth2client.client import GoogleCredentials
+creds = GoogleCredentials.get_application_default()
+import getpass
+!google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret} &lt; /dev/null 2&gt;&amp;1 | grep URL
+vcode = getpass.getpass()
+!echo {vcode} | google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret}
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>After gaining permission, you can mount Google Drive with following script:</p><div class="language-sh line-numbers-mode"><pre class="language-text"><code># Execute when running on colab
+# Mount Google Drive
+!mkdir -p drive
+!google-drive-ocamlfuse drive
+
+import os
+os.chdir('drive/Colab Notebooks')
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>Now your working  directory is the <code>Colab Notebooks</code> directory in your Google Drive.</p><h2 id="upload-download-files"><a href="#upload-download-files" aria-hidden="true" class="header-anchor">#</a> Upload / Download Files</h2><p>If you want to upload / download files via browser, you can use Colab's python API.</p><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> files
+files<span class="token punctuation">.</span>download<span class="token punctuation">(</span><span class="token string">'file_path'</span><span class="token punctuation">)</span>
+files<span class="token punctuation">.</span>upload<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># will display an upload button</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></div><div class="page-edit"><!----><!----></div><div class="page-nav"><p class="inner"><span class="prev">
+        ← <a href="/dev_notes/ml/tensorflow/syntax.html" class="prev">
+          Tensorflow Syntax
+        </a></span><span class="next"><a href="/dev_notes/ml/tools/jupyter-tips.html">
+          Jupyter Notebook Tips
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/assets/js/6.57f14f08.js" defer></script><script src="/assets/js/app.e04e06c7.js" defer></script>
+  </body>
+</html>
